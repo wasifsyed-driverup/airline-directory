@@ -869,9 +869,11 @@ const AirlineSearch = () => {
   const [searchTerm, setSearchTerm] = useState('');
   
   const filteredAirlines = airlineData.filter(airline => 
+  
     airline.airline.toLowerCase().includes(searchTerm.toLowerCase()) ||
     airline.code.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    airline.location.toLowerCase().includes(searchTerm.toLowerCase())
+    airline.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      airline.prefix.includes(searchTerm.toLowerCase()) 
   );
 
   return (
